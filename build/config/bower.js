@@ -9,18 +9,17 @@ module.exports = function(grunt) {
       jslibs =  config.js + '/libs';
 
   // Load task
-  grunt.loadNpmTasks('grunt-bowercopy');
+  grunt.loadNpmTasks('grunt-bower-task');
 
   // Config
   return {
-    dev: {
-      options: {
-        destPrefix: jslibs
-      },
-      files: {
-        'requirejs': 'requirejs/require.js'
-      }
+    options: {
+      install: false,
+      targetDir: jslibs,
+      layout: 'byComponent'
     },
+
+    dev: {},
 
     // should not be needed, here as a placeholder.  The only scenario where we
     // will need to add files here is if, during the requirejs build, it is

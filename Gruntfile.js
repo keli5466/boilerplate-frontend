@@ -23,7 +23,7 @@ module.exports = function(grunt) {
     grunt.task.run([
       'clean:dev',
       'jquery',
-      'bowercopy:dev',
+      'bower:dev',
       'compass:dev',
       'concurrent:dev',
       'lodash',
@@ -38,7 +38,7 @@ module.exports = function(grunt) {
   grunt.registerTask('dist', 'build all static files', [
     'clean:dist',
     'jquery',
-    'bowercopy:dev',
+    'bower:dev',
     'compass:dist',
     'assemble:dist',
     'concurrent:dist',
