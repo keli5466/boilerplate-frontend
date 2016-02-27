@@ -1,0 +1,25 @@
+
+{
+  "title": "CHANGE TITLE",
+  "description": "CHANGE description",
+  "image": "CHANGE IMAGE",
+
+  "og:local": "en_US",
+  "og:title": "CHANGE OG:TITLE",
+  "og:type": "website",
+  "og:url": "CHANGE OG:URL",
+  "og:image": "CHANGE OG:IMAGE",
+  "og:description": "CHANGE OG:DESCRIPTION",
+  "og:site_name": "CHANGE OG:SITE_NAME",
+
+  "twitter:card": "summary",
+  "twitter:site": "CHANGE TWITTER:SITE",
+  "twitter:title": "CHANGE TWITTER:TITLE",
+  "twitter:description": "CHANGE TWITTER:TITLE",
+  "twitter:domain": "CHANGE TWITTER:DOMAIN",
+  "twitter:image": "CHANGE TWITTER:IMAGE",
+  "twitter:creator": "CHANGE TWITTER:CREATOR",
+
+  "fb:admins": "CHANGE FB:ADMINS"
+}
+
