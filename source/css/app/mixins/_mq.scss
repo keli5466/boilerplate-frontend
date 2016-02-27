@@ -1,7 +1,0 @@
-// mq()
-//   Media Queries
-//   EXAMPLE: use the large breakpoint media query
-//     @include mq($L) {}
-@mixin mq($media-query) {
-  @media ($media-query) { @content; }
-}

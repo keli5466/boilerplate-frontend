@@ -1,7 +1,0 @@
-// rgb-alpha()
-//  Converts hex in to rgb and allows for opacity variable
-//  Example
-//    rgb-alpha($black, .5);
-@function rgb-alpha($color, $opacity: 1) {
-  @return rgba($color, $opacity);
-}
