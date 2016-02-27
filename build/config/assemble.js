@@ -26,7 +26,7 @@ module.exports = function(grunt) {
       files: [
         {
           cwd: config.tmpl + '/_pages/',
-          dest: './.tmp/',
+          dest: config.dev,
           expand: true,
           src: '**/*.hbs'
         }
