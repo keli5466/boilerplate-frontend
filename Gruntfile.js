@@ -1,6 +1,8 @@
 module.exports = function(grunt) {
   'use strict';
 
+  var browserSync = require('browser-sync');
+
   // Define grunt config option
   grunt.config.set('config', require('./Gruntconfig')());
 
@@ -30,7 +32,7 @@ module.exports = function(grunt) {
         'concurrent:dev',
         'postcss:dev',
         'jquery',
-        'browserSync:dev',
+        'browserSync-init',
         'watch'
       ]);
     }
@@ -51,6 +53,25 @@ module.exports = function(grunt) {
     }
   );
   
+  grunt.registerTask(
+    'browserSync-init',
+    function() {
+      var done = this.async(),
+          config = grunt.config.get('config');
+
+      browserSync({
+          server: './' + config.dev,
+      }, function (err, bs) {
+      });
+    }
+  );
+
+  grunt.registerTask(
+    'browserSync-inject-css',
+    function () {
+      browserSync.reload(['css/**/*.css']);
+    }
+  );
 
   /**
    * Custom build jQuery based on configs in Gruntconfig.js
@@ -105,7 +126,8 @@ module.exports = function(grunt) {
       grunt.log.writeln('Start the lodash Build Process');
 
       var done = this.async(),
-          command = 'lodash category=object,collection,array,function,lang -d -o ./source/js/lodash.js',
+          config = grunt.config.get('config'),
+          command = 'lodash category=object,collection,array,function,lang -d -o ' + config.js + '/libs/lodash.js',
           exec = require('child_process').exec,
           child;
 
