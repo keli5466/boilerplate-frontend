@@ -1,38 +1,7 @@
 module.exports.register = function (Handlebars, options)  {
 
-  /* Markup helpers
-  *****************************************/
-
-  function openTag(type, closing, attr) {
-    var html = ['<' + type];
-    for (var prop in attr) {
-      // A falsy value is used to remove the attribute.
-      // EG: attr[false] to remove, attr['false'] to add
-      if (attr[prop]) {
-        html.push(prop + '="' + attr[prop] + '"');
-      }
-    }
-    return html.join(' ') + (!closing ? ' /' : '') + '>';
-  }
-
-  function closeTag(type) {
-    return '</' + type + '>';
-  }
-
-  function createElement(type, closing, attr, contents) {
-    try{
-      contents = (contents || '').replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
-    } catch(e){}
-
-    return openTag(type, closing, attr) + (closing ? (contents || '') + closeTag(type) : '');
-  }
-
-  function extend(obj1, obj2) {
-    for(var key in obj2) {
-      obj1[key] = obj2[key];
-    }
-    return obj1;
-  }
+  var moment = require('moment'),
+      _ = require('lodash');
 
   /**
    * {{link object}}
@@ -62,8 +31,49 @@ module.exports.register = function (Handlebars, options)  {
       body = input.text;
     }
 
-    element = createElement('a', true, extend(attr, options.hash), body);
+    element = Handlebars.createElement(
+      'a',
+      true,
+      Handlebars.extend(
+        attr,
+        options.hash
+      ),
+      body
+    );
 
     return options.fn ? element : new Handlebars.SafeString(element);
   });
+
+  Handlebars.registerHelper(
+    'moment',
+    function(date, format, options) {
+      if (format.fn) {
+        return date;
+      }
+
+      return moment(date).format(format);
+    }
+  );
+
+
+  Handlebars.registerHelper(
+    'isEmpty',
+    function(context, options) {
+      if (_.isEmpty(context)) {
+        return options.fn(this);
+      }
+      return options.inverse(this);
+    }
+  );
+
+  Handlebars.registerHelper(
+    'notEmpty',
+    function(context, options) {
+      if (_.isEmpty(context)) {
+        return options.inverse(this);
+      }
+      return options.fn(this);
+    }
+  );
+
 };
