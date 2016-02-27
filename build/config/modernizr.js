@@ -21,7 +21,7 @@ module.exports = function(grunt) {
       devFile: 'remote',
 
       // https://github.com/doctyper/customizr#dest-string-optional
-      dest: 'dist/wp-content/themes/cpb/modernizr.js',
+      dest: config.devJS + '/modernizr.js',
 
       // https://github.com/doctyper/customizr#uglify-boolean-optional
       uglify: false,
@@ -51,7 +51,7 @@ module.exports = function(grunt) {
       devFile: 'remote',
 
       // https://github.com/doctyper/customizr#dest-string-optional
-      dest: 'dist/wp-content/themes/cpb/modernizr.js',
+      dest: config.distJS + '/modernizr.js',
 
       // https://github.com/doctyper/customizr#uglify-boolean-optional
       uglify: true,
