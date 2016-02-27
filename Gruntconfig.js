@@ -1,6 +1,3 @@
-/**
- * config
- */
 module.exports = function() {
   'use strict';
 
@@ -22,38 +19,51 @@ module.exports = function() {
   config.distJS = config.dist + '/js';
   config.distImages = config.dist + '/images';
 
+  config.requirejs = {
+    //*
+    optimize: 'uglify2',
+    /*/
+    optimize: 'none',
+    //*/
+    main: config.js + '/main.js',
+    removeCombined: false // set to false if you want the combinded originals
+  };
+
   config.jquery = {
-    version: '1.11.1',
-    exclude: 'ajax,effects',
+    version: '2.1.1',
+    exclude: '',
     dest: config.js + '/jquery.js'
   };
 
-  config.modernizr = {
-    // https://github.com/Modernizr/modernizr.com/blob/gh-pages/i/js/modulizr.js#L15-157
-    tests: [
-      'svg',
-      'inlinesvg'
-    ],
+  config.sassGlob = {};
 
-    extra: {
-      'shiv' : true,
-      'printshiv' : false,
-      'load' : true,
-      'mq' : true,
-      'cssclasses' : true
-    },
+  config.sassGlob[
+    config.css + '/_functionsMap.scss'
+  ] = config.css + '/functions/**/*.scss';
 
-    extensibility : {
-      'addtest' : false,
-      'prefixed' : false,
-      'teststyles' : false,
-      'testprops' : false,
-      'testallprops' : false,
-      'hasevents' : false,
-      'prefixes' : false,
-      'domprefixes' : false
-    }
-  };
+  config.sassGlob[
+    config.css + '/_mixinsMap.scss'
+  ] = config.css + '/mixins/**/*.scss';
+
+  config.sassGlob[
+    config.css + '/_fontsMap.scss'
+  ] = config.css + '/fonts/**/*.scss';
+
+  config.sassGlob[
+    config.css + '/_animationsMap.scss'
+  ] = config.css + '/animations/**/*.scss';
+
+  config.sassGlob[
+    config.css + '/_defaultsMap.scss'
+  ] = config.css + '/defaults/**/*.scss';
+
+  config.sassGlob[
+    config.css + '/_modulesMap.scss'
+  ] = config.css + '/modules/**/*.scss';
+
+  config.sassGlob[
+    config.css + '/_utilitiesMap.scss'
+  ] = config.css + '/utilities/**/*.scss';
 
   return config;
 };

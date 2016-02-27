@@ -1,5 +1,8 @@
+
 /**
- * build.config.watch
+ * Grunt Watch
+ * @param  {Grunt} grunt
+ * @return {Object} config for grunt watch
  */
 module.exports = function(grunt) {
   'use strict';
@@ -12,16 +15,16 @@ module.exports = function(grunt) {
   // Config
   return {
     options: {
-      livereload: true
+      spawn: false
     },
 
     rebuild: {
-      tasks: [],
       files: [
         'Gruntfile.js',
         'Gruntconfig.js',
         'build/config/**/*.js'
-      ]
+      ],
+      tasks: []
     },
 
     js: {
@@ -30,11 +33,13 @@ module.exports = function(grunt) {
         'Gruntconfig.js',
         'build/config/**/*.js',
         config.js + '/**/*.js',
-        '!' + config.js + '/libs/*.js'
+        '!' + config.js + '/libs/*.*'
       ],
       tasks: [
-        'jshint',
-        'jscs'
+        'eslint',
+        'requirejs:dev',
+        'jquery',
+        'bsReload:js'
       ]
     },
 
@@ -45,16 +50,18 @@ module.exports = function(grunt) {
       tasks: [
         'sass_globbing:dev',
         'sass:dev',
-        'stripmq:dev'
+        'postcss:dev',
+        'bsReload:css'
       ]
     },
 
-    assemble: {
+    theme: {
       files: [
-        config.tmpl + '/**/*'
+        config.root + '/theme/**/*'
       ],
       tasks: [
-        'assemble:dev'
+        'copy:theme',
+        'bsReload:html'
       ]
     }
   };

@@ -1,6 +1,4 @@
-/**
- * build.config.clean
- */
+
 module.exports = function(grunt) {
   'use strict';
 
@@ -11,8 +9,7 @@ module.exports = function(grunt) {
 
   // Config
   return {
-
-    dev: '.tmp',
+    dev: config.tmp,
     dist: {
       files: [{
         dot: true,

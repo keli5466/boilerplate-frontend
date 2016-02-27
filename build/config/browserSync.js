@@ -1,49 +1,38 @@
-/**
- * build.config.browserSync
- */
+
 module.exports = function(grunt) {
   'use strict';
 
   var config = grunt.config.get('config');
 
-  // Load task
   grunt.loadNpmTasks('grunt-browser-sync');
 
-  // Config
   return {
     dev: {
-      files: {
+      bsFiles: {
         src: [
-          '.tmp/**',
-          config.js + '/**'
-        ]
+          '*.css',
+          '**/*.php',
+          'images/*.jpg',
+          'images/*.png',
+        ],
       },
       options: {
-        open: true,
-        server: {
-          baseDir: '.tmp/',
-          routes: {
-            '/bower_components': 'bower_components',
-            '/js': 'source/js',
-            '/images': 'source/images',
-            '/css/fonts': 'source/css/fonts'
-          }
-        },
-        watchTask: true
+        watchTask: true,
+        debugInfo: true,
+        logConnections: true,
+        notify: true,
+        // proxy: '',
+        // server: {
+          // baseDir: './' + config.tmp,
+          // routes: {
+          //   '/bower_components': 'bower_components',
+          //   '/js': 'source/js',
+          //   '/images': 'source/images',
+          //   '/css/fonts': 'source/css/fonts'
+          // }
+        // },
+        background: true
       }
-    },
-    dist: {
-      files: {
-        src: 'dist/**',
-      },
-      options: {
-        open: false,
-        server: {
-          baseDir: 'dist/'
-        }
-      }
-    },
-    test: {
     }
   };
 };

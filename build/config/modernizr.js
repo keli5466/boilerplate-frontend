@@ -1,43 +1,76 @@
-/**
- * build.config.clean
- */
+
 module.exports = function(grunt) {
   'use strict';
 
   var config = grunt.config.get('config');
 
-  // Load task
   grunt.loadNpmTasks('grunt-modernizr');
 
-  // Config
+  /*
+    Go to https://modernizr.com/download, select the features you want to
+    detect, click build, copy `customTests`, `tests`, `extensibility` from the
+    Grunt Config, and replace // REPLACEME // (including the // and //)
+  */
+
   return {
     dev: {
-      'outputFile': config.js + '/libs/modernizr.js',
+      // https://github.com/doctyper/customizr#cache-boolean-optional
+      // cache: true,
 
-      'extra': config.modernizr.extra,
+      // https://github.com/doctyper/customizr#devfile-string-optional
+      devFile: 'remote',
 
-      'extensibility': config.modernizr.extensibility,
+      // https://github.com/doctyper/customizr#dest-string-optional
+      dest: 'dist/wp-content/themes/cpb/modernizr.js',
 
-      'uglify': false,
+      // https://github.com/doctyper/customizr#uglify-boolean-optional
+      uglify: false,
 
-      'parseFiles': false,
+      // https://github.com/doctyper/customizr#crawl-boolean-optional
+      crawl: false,
 
-      'tests': config.modernizr.tests
+      // https://github.com/doctyper/customizr#usebuffers-boolean-optional
+      useBuffers: false,
+
+      "tests": [
+        "pointerevents",
+        "touchevents",
+        "cssanimations",
+        "picture"
+      ],
+      "options": [
+        "setClasses"
+      ],
     },
 
     dist: {
-      'devFile': 'bower_components/modernizr/modernizr.js',
-      'outputFile': config.distJS + '/libs/modernizr.js',
+      // https://github.com/doctyper/customizr#cache-boolean-optional
+      cache: true,
 
-      'extra': config.modernizr.extra,
+      // https://github.com/doctyper/customizr#devfile-string-optional
+      devFile: 'remote',
 
-      'extensibility': config.modernizr.extensibility,
+      // https://github.com/doctyper/customizr#dest-string-optional
+      dest: 'dist/wp-content/themes/cpb/modernizr.js',
 
-      'uglify': true,
+      // https://github.com/doctyper/customizr#uglify-boolean-optional
+      uglify: true,
 
-      'parseFiles': false,
+      // https://github.com/doctyper/customizr#crawl-boolean-optional
+      crawl: false,
 
-      'tests': config.modernizr.tests
+      // https://github.com/doctyper/customizr#usebuffers-boolean-optional
+      useBuffers: false,
+
+      "tests": [
+        "pointerevents",
+        "touchevents",
+        "cssanimations",
+        "picture"
+      ],
+      "options": [
+        "setClasses"
+      ]
     }
-  };
+  }
 };
