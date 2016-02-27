@@ -9,10 +9,12 @@ module.exports = function() {
   config.tmpl  = config.root + '/templates'
 
   config.css    = config.root + '/css';
-  config.cssgen = '.tmp/cssgen';
-  config.cssmin = config.css  + '/min';
 
   config.images = config.root + '/images';
+
+  config.dev = 'dev';
+  config.devCSS = config.dev + '/css';
+  config.devJS = config.dev + '/js';
 
   config.dist = 'dist';
   config.distCSS = config.dist + '/css';
