@@ -26,6 +26,7 @@ module.exports = function(grunt) {
         'clean:dev',
         'bowercopy:dev',
         'sass_globbing:dev',
+        'custom-lodash',
         'concurrent:dev',
         'postcss:dev',
         'jquery',
@@ -42,6 +43,7 @@ module.exports = function(grunt) {
         'clean:dist',
         'bowercopy:dev',
         'sass_globbing:dev',
+        'custom-lodash',
         'concurrent:dist',
         'postcss:dist',
         'jquery'
