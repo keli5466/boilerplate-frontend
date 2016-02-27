@@ -4,6 +4,6 @@ var envSep = ~process.platform.indexOf('win') ? ';' : ':';
 
 process.env.PATH = 'bin' + envSep + process.env.PATH;
 
-exec('bower install && grunt githooks', function(err, stdout, stderr){
+exec('bower install', function(err, stdout, stderr){
   sys.puts(stdout);
 });
