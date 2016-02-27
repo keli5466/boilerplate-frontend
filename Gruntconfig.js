@@ -34,7 +34,7 @@ module.exports = function() {
   config.jquery = {
     version: '2.1.1',
     exclude: '',
-    dest: config.js + '/jquery.js'
+    dest: config.js + '/libs/jquery'
   };
 
   config.sassGlob = {};
