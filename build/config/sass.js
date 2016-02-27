@@ -6,7 +6,7 @@ module.exports = function(grunt) {
       sourceSassFile = config.css + '/app.scss',
 
       // path to the dev version of app.css
-      devCssFile = config.tmpCSS + '/app.css',
+      devCssFile = config.devCSS + '/app.css',
 
       // path to the dist version fo the app.css
       distCssFile = config.distCSS + '/app.css';
