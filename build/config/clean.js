@@ -9,16 +9,17 @@ module.exports = function(grunt) {
 
   // Config
   return {
-    dev: config.tmp,
-    dist: {
-      files: [{
-        dot: true,
-        src: [
-          '.tmp',
-          config.dist + '/*',
-          '!' + config.dist + '/.git*'
-        ]
-      }]
-    }
+    dev: config.dev,
+    dist: config.dist
+    // dist: {
+    //   files: [{
+    //     dot: true,
+    //     src: [
+    //       '.tmp',
+    //       config.dist + '/*',
+    //       '!' + config.dist + '/.git*'
+    //     ]
+    //   }]
+    // }
   };
 };
