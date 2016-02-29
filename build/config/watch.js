@@ -39,7 +39,7 @@ module.exports = function(grunt) {
         'eslint',
         'requirejs:dev',
         'jquery',
-        'bsReload:js'
+        'browserSync-inject-js'
       ]
     },
 
@@ -51,17 +51,17 @@ module.exports = function(grunt) {
         'sass_globbing:dev',
         'sass:dev',
         'postcss:dev',
-        'bsReload:css'
+        'browserSync-inject-css'
       ]
     },
 
-    theme: {
+    html: {
       files: [
-        config.root + '/theme/**/*'
+        config.tmpl + '/**/*'
       ],
       tasks: [
-        'copy:theme',
-        'bsReload:html'
+        'assemble:dev',
+        'browserSync-inject-html'
       ]
     }
   };
