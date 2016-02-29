@@ -61,7 +61,16 @@ module.exports = function(grunt) {
 
       browserSync({
           server: './' + config.dev,
+          plugins: [
+            {
+              module: 'bs-html-injector',
+              options: {
+                files: ['*.html']
+              }
+            }
+          ]
       }, function (err, bs) {
+        done();
       });
     }
   );
@@ -69,7 +78,21 @@ module.exports = function(grunt) {
   grunt.registerTask(
     'browserSync-inject-css',
     function () {
-      browserSync.reload(['css/**/*.css']);
+      browserSync.reload('*.css');
+    }
+  );
+
+  grunt.registerTask(
+    'browserSync-inject-js',
+    function () {
+      browserSync.reload();
+    }
+  );
+
+  grunt.registerTask(
+    'browserSync-inject-html',
+    function () {
+      browserSync.reload();
     }
   );
 
