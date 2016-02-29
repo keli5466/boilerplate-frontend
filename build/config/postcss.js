@@ -10,8 +10,8 @@ module.exports = function(grunt) {
   return {
     options: {
       map: {
-          inline: false, // save all sourcemaps as separate files...
-          annotation: config.distCSS // ...to the specified directory
+        inline: false, // save all sourcemaps as separate files...
+        annotation: config.devCSS // ...to the specified directory
       },
 
       processors: [
@@ -21,7 +21,7 @@ module.exports = function(grunt) {
       ],
     },
     dev: {
-      src: config.distCSS + '/app.css'
+      src: config.devCSS + '/app.css'
     },
 
     dist: {
