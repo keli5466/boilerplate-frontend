@@ -1,13 +1,11 @@
-/**
- * build.config.assemble
- */
+
 module.exports = function(grunt) {
   'use strict';
 
   var config = grunt.config.get('config');
 
   // Load task
-  grunt.loadNpmTasks('assemble');
+  grunt.loadNpmTasks('grunt-assemble');
 
   // Config
   return {
@@ -28,7 +26,7 @@ module.exports = function(grunt) {
       files: [
         {
           cwd: config.tmpl + '/_pages/',
-          dest: './.tmp/',
+          dest: config.dev,
           expand: true,
           src: '**/*.hbs'
         }

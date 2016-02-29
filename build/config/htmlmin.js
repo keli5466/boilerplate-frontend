@@ -1,6 +1,4 @@
-/**
- * build.config.htmlmin
- */
+
 module.exports = function(grunt) {
   'use strict';
 
@@ -9,9 +7,7 @@ module.exports = function(grunt) {
   // Load task
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
 
-  // Config
   return {
-    dev: {},
     dist: {
       options: {
         removeComments: true,

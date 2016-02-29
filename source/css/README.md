@@ -1,6 +1,8 @@
-# CSS
+# Sass
 
-* /app/ contains the SCSS that will be processed and minified by Grunt
-* /fonts/ contains the webfonts and icon fonts
-* /min/ contains the minified code processed by Grunt
+## TODO
+
+* Describe the naming conventions here (OO naming convention) and how to add new files, and how the Grunt build is set up.
+* Make a note about /_modules and /_vendor.
+* Make sure to talk about ESRG.
 

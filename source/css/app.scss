@@ -2,6 +2,8 @@
 
 @import 'extra-strength-responsive-grids/css/_grid.generator';
 
+@import 'compass';
+
 // Your mixins & functions
 @import 'functionsMap';
 @import 'mixinsMap';
@@ -16,7 +18,7 @@
 @import 'animationsMap';
 
 // normalize.css
-@import 'normalize-scss/_normalize';
+@import 'normalize-scss/sass/_normalize';
 
 // Our own base styles
 @import 'defaultsMap';

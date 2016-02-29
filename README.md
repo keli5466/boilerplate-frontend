@@ -15,21 +15,26 @@ This set up is for static sites and not initailly set up to handle dynamic sites
 [ADD SHORT DISCRIPTION OF PROJECT]
 
 ## Requirements
-* [node.js](http://nodejs.org/)
+* [node.js](http://nodejs.org/) 5.3.0
 * [grunt](http://gruntjs.com)
+    * grunt-cli version: 0.1.13
+    * grunt version: 0.4.5
+* [bower](http://bower.io/)
+    * bower version: 1.7.2
+
+## Prerequisite
+ * `npm install -g grunt-cli`
+ * `npm install -g bower`
 
 ## Quick Start
-
-* run `npm install -g grunt grunt-cli` (can skip if you've already got them installed)
 * run `npm install` (you may need to do `sudo npm install` due to the execSync module)
 * run `grunt serve` while developing (see below for info on `grunt serve`)
-
 
 ## Development Notes
 
 A few quick reminders as you are developing.
 
-* Absolutely no compiled files should be committed to git.  If a compiled file is showing in `git status`, add it to the ignore file.
+* ALL CODE CHANGES HAPPEN IN `SOURCE`, DO NOT ADD ANY FILES DIRECTLY TO `DIST`
 * Use bower for all libraries accessible via git.  Using `grunt bowercopy:dev` or `grunt bowercopy:dist` will move those libraries' assets to the correct location.
 * `bower_components` is an import path for SASS/Compass.
 * Boilerplate contains Lodash and not Underscore or Lodash version of Underscore, so all [Lodash methods](http://lodash.com/docs) are available when required.

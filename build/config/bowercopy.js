@@ -1,8 +1,5 @@
-/**
- * build.config.bowercopy
- */
+
 module.exports = function(grunt) {
-  /*jshint camelcase: false */
   'use strict';
 
   var config = grunt.config.get('config'),

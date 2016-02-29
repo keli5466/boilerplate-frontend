@@ -1,6 +1,6 @@
 {{!
   @name nav
-  @param class
+  @param navigationClass
   @param links
   @param links[].href
   @param links[].text
@@ -8,7 +8,7 @@
   @param headingClass
   @example {{>nav context}}
 }}
-<nav class="{{this.class}}" role="navigation">
+<nav class="{{this.navigationClass}}" role="navigation">
   <h1
     class="{{default this.headingClass "visuallyhidden"}}"
     >{{this.heading}}</h1>

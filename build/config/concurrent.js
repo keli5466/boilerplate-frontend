@@ -1,6 +1,4 @@
-/**
- * build.config.concurrent
- */
+
 module.exports = function(grunt) {
   'use strict';
 
@@ -9,12 +7,20 @@ module.exports = function(grunt) {
 
   // Config
   return {
-    dev: [],
+    dev: [
+      'sass:dev',
+      'modernizr:dev',
+      'copy:dev',
+      'requirejs:dev',
+      'assemble:dev'
+    ],
 
     dist: [
-      'imagemin:dist',
-      'svgmin:dist',
-      'htmlmin:dist'
+      'sass:dist',
+      'modernizr:dist',
+      'copy:dist',
+      'requirejs:dist',
+      'assemble:dist'
     ]
   };
 };

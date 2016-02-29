@@ -1,5 +1,6 @@
-define(function() {
-  'use strict';
+'use strict';
+
+define(function getBreakPoint() {
 
   /**
    * @function getBreakPoint
@@ -11,11 +12,12 @@ define(function() {
   return function getBreakPoint() {
     // When getComputedStyle isn't supported (IE8 and below)
     if (typeof window.getComputedStyle === 'function') {
-      return window.getComputedStyle(document.body,':after')
+      return window.getComputedStyle(document.body, ':before')
       .getPropertyValue('content')
       // Remove quotes
       // IE11 and below return the string "s" instead of just s
-      .replace(/\"|\'/g,'');
+      .replace(/\"|\'/g, '')
+      .toLowerCase();
     }
     // Always return 'm' as IE8 is using stripmq for the IE8+below css
     else {

@@ -19,5 +19,6 @@
       "text": "Click me"
     },
     "percentage": "20"
-  }
+  },
+  "foo": "bar"
 }
