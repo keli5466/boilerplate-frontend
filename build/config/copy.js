@@ -18,7 +18,7 @@ module.exports = function(grunt) {
             'browserconfig.xml',
             'crossdomain.xml'
           ],
-          dest: config.tmp
+          dest: config.dev
         }
       ]
     },
