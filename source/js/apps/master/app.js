@@ -1,12 +1,12 @@
+'use strict';
+
 /**
  * apps/master/app
  */
 
-define('apps/master/app', [
+define([
   'settings'
-], function() {
-
-  'use strict';
+], function defineMasterApp() {
 
   var App = {};
 
@@ -15,7 +15,7 @@ define('apps/master/app', [
    *
    * Gets the application running
    */
-  App.start = function() {
+  App.start = function appStart() {
     $('main').append('<p>App Started</p>');
     console.log('App Started');
   };
