@@ -25,6 +25,8 @@ This set up is for static sites and not initailly set up to handle dynamic sites
 ## Prerequisite
  * `npm install -g grunt-cli`
  * `npm install -g bower`
+ * `npm install -g lodash`
+ * `npm install -g lodash-cli`
 
 ## Quick Start
 * run `npm install` (you may need to do `sudo npm install` due to the execSync module)
